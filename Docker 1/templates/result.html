@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            padding: 32px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 340px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .prediction {
+            font-size: 26px;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 18px 0;
+            text-transform: capitalize;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+        table td {
+            padding: 6px 4px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        table td:last-child {
+            text-align: right;
+            color: #34495e;
+        }
+        a.back-link {
+            display: inline-block;
+            margin-top: 22px;
+            text-decoration: none;
+            background: #2c3e50;
+            color: white;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        a.back-link:hover {
+            background: #1a252f;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Predicted Species</h1>
+        <div class="prediction">{{ prediction }}</div>
+
+        {% if inputs %}
+        <table>
+            {% for key, value in inputs.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        <a class="back-link" href="/">Try Again</a>
+    </div>
+</body>
+</html>

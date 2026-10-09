@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Species Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            padding: 32px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 340px;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: #2c3e50;
+        }
+        p.subtitle {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: #34495e;
+            margin-bottom: 4px;
+            margin-top: 14px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            box-sizing: border-box;
+            border: 1px solid #dcdfe3;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            margin-top: 24px;
+            width: 100%;
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Iris Species Predictor</h1>
+        <p class="subtitle">Gaussian Naive Bayes model</p>
+        <form action="/predict" method="POST">
+            <label for="sepal_length">Sepal Length (cm)</label>
+            <input type="number" step="0.1" name="sepal_length" id="sepal_length" required>
+
+            <label for="sepal_width">Sepal Width (cm)</label>
+            <input type="number" step="0.1" name="sepal_width" id="sepal_width" required>
+
+            <label for="petal_length">Petal Length (cm)</label>
+            <input type="number" step="0.1" name="petal_length" id="petal_length" required>
+
+            <label for="petal_width">Petal Width (cm)</label>
+            <input type="number" step="0.1" name="petal_width" id="petal_width" required>
+
+            <input type="submit" value="Predict Species">
+        </form>
+    </div>
+</body>
+</html>
